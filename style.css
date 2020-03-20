@@ -1,0 +1,21 @@
+body,
+html {
+    margin: 0;
+    height: 100%;
+    background: gray;
+}
+
+span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    font-size: 4em;
+    color: white;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
