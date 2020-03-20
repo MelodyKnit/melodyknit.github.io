@@ -2,7 +2,6 @@ body,
 html {
     margin: 0;
     height: 100%;
-    font-size: 1em;
     background: gray;
 }
 
@@ -12,7 +11,6 @@ span {
     position: fixed;
     left: 50%;
     top: 50%;
-    font-size: 4em;
     color: white;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
