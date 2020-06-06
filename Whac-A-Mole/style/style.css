@@ -1,0 +1,233 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #4eff4e;
+  font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+main {
+  position: relative;
+}
+body,
+html,
+main,
+table,
+.game-set,
+.game-set .main {
+  width: 100%;
+  height: 100%;
+}
+h3,
+h2 {
+  text-align: center;
+}
+.cursor {
+  width: 115px;
+  height: 100px;
+  z-index: 1000;
+  position: absolute;
+  pointer-events: none;
+  transition: 0.2s transform;
+  background: url(../image/Hammer.png) no-repeat;
+  background-size: 110% 100%;
+}
+.game-set {
+  z-index: 1100;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.game-set h1,
+.game-set .overview h2 {
+  color: white;
+  font-size: 15vh;
+  margin: 0 auto;
+  text-shadow: 0 0 12px black;
+}
+.game-set .overview h2 {
+  font-size: 12vh;
+}
+.game-set .main {
+  height: auto;
+  padding: 20px;
+  max-width: 500px;
+  position: relative;
+  border-radius: 25px;
+  box-shadow: 2px 2px 6px #414141;
+  background-color: white;
+}
+.game-set .main .start,
+.game-set .main .group {
+  margin: 20px auto;
+}
+.game-set .main .start {
+  display: block;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  text-align: center;
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: 16.66666667px;
+  background-color: blueviolet;
+}
+.game-set .main .group {
+  width: 300px;
+  left: calc(50% - 300px / 2);
+}
+.game-set .main .group input {
+  width: 300px;
+  border: none;
+  outline: none;
+  margin: 10px 0;
+  font-size: 20px;
+  border-bottom: 1px solid blueviolet;
+}
+.game-set .main .return {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transform: rotate(180deg);
+  background: url(../image/course.png) no-repeat;
+  background-size: cover;
+}
+.game-set .main .word {
+  font-size: 40px;
+}
+.user-list {
+  font-size: 20px;
+  text-align: center;
+}
+.view {
+  cursor: none;
+  width: 950px;
+  height: 520px;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 20px;
+}
+.view table {
+  text-align: center;
+}
+.view table td {
+  position: relative;
+}
+.view table td .cave,
+.view table td .gopher {
+  left: 50%;
+  bottom: 0;
+  position: absolute;
+  transform: translateX(-50%);
+}
+.view table td .cave {
+  width: 47%;
+  height: 40%;
+  border-radius: 50%;
+  background-color: #492101;
+}
+.view table td .cave .gopher {
+  bottom: 20%;
+  width: 90%;
+  height: 220%;
+  background: url(../image/Gopher_1.png) no-repeat;
+  background-size: cover;
+}
+.view table td .cave .gopher div {
+  pointer-events: none;
+}
+.view table td .cave .gopher .knock-down {
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  background: url(../image/1.png) no-repeat;
+  background-position: 0 -70px;
+}
+.view table td .cave .gopher .txt {
+  display: flex;
+  font-size: 30px;
+  white-space: nowrap;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+}
+.view table td .cave .gopher .txt span {
+  bottom: 1%;
+  padding: 0 5px;
+  border-radius: 5px;
+  position: absolute;
+  background-color: white;
+}
+.situation {
+  height: 100px;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 700px;
+  border-radius: 0 0 20px 20px;
+  background: white;
+  box-shadow: 0 3px 6px gray;
+}
+.situation .over,
+.situation .break {
+  color: white;
+  cursor: pointer;
+  line-height: 200%;
+  border-radius: 50px;
+  background-color: #d2d225;
+}
+.situation .over {
+  background-color: #ff1f1f;
+}
+.left {
+  height: 100%;
+  position: relative;
+  width: calc(100% - (340px + 10px * 2));
+}
+.list {
+  top: 0;
+  right: 0;
+  width: 340px;
+  height: 100%;
+  padding: 10px;
+  color: black;
+  overflow-y: auto;
+  position: absolute;
+  background-color: white;
+  box-shadow: -3px 0 6px gray;
+}
+.list table {
+  height: auto;
+  text-align: center;
+  border-bottom: 1px solid gray;
+}
+.list .table {
+  position: relative;
+  margin-bottom: 10px;
+  box-shadow: 0 0 6px gray;
+  border-radius: 20px 0 20px 20px;
+}
+.list .table .delete {
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url(../image/close.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.list .pad {
+  padding: 10px;
+}
+.list span {
+  cursor: pointer;
+  margin: 2px 4px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 0 0 6px gray;
+}
