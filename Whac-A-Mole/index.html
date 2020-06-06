@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whac-A-Mole</title>
+    <link rel="stylesheet" href=".compile/style.css">
+    <script src="script/jquery-3.5.1.min.js"></script>
+    <script src="script/vue.min.js"></script>
+    <script src="script/data.js"></script>
+    <script src="script/main.js"></script>
+</head>
+
+<body>
+    <main id="app">
+        <div ref="cursor" class="cursor"></div>
+        <audio ref="audio" class="audio" src="music/clilck.mp3" style="display:none"></audio>
+        <section class="left">
+            <section class="game-set" v-show="gamestart" @click="gameset=true;isword=false">
+                <div class="overview" v-if="!gameset" style="cursor: pointer">
+                    <h1>{{ group.integral >= max? "Full Mark" : group.errorList.length >= max? "Too Weak" : "Game Over" }}</h1>
+                    <h2>Score : {{ group.integral }}</h2>
+                    <h2>Error : {{ group.errorList.length }}</h2>
+                </div>
+                <div class="main" v-show="gameset" @click.stop>
+                    <div v-if="!isword">
+                        <div class="group">
+                            <h2>Group Number: {{ number }}</h2>
+                            <label for="time">Game Time  (minute)</label>
+                            <input type="number" id="time" min="0.5" step="0.5" v-model="endTime">
+                            <label for="size">Font Size</label>
+                            <input type="number" id="size" min="20" step="1" v-model="fontSize">
+                            <label for="name">Group Name</label>
+                            <input type="text" id="name" :placeholder="`Group ${number}`" v-model="setname">
+                        </div>
+                        <div class="start" @click="start">Game Start</div>
+                    </div>
+                    <div class="word" v-if="isword">
+                        <h2>{{ word }}</h2>
+                        <div class="return" @click="isword=false"></div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="situation">
+                <table class="user-list">
+                    <tr>
+                        <td>Group Name</td>
+                        <td>Game Time</td>
+                        <td>Error Word</td>
+                        <td>Score</td>
+                        <td>Surplus</td>
+                        <td>
+                            <div class="over" @click="gameover">END</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ group.name }}</td>
+                        <td>{{ group.time }}s / {{ group.endTime }}s</td>
+                        <td>{{ group.errorList.length }}</td>
+                        <td>{{ group.integral }}</td>
+                        <td>{{ textData.length }}</td>
+                        <td>
+                            <div class="break" @click="breaks();random()">Skip</div>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="view" @mousemove="move" @mousedown="rotate(45)" @mouseup="rotate(0)">
+                <table class="game" border="0">
+                    <tbody>
+                        <tr v-for="l in line">
+                            <td v-for="r in row">
+                                <div class="cave">
+                                    <div @click="strike(event.target, row * (l - 1) + r - 1)" ref="g" class="gopher" style="display: none;">
+                                        <div class="knock-down" v-show="map[row * (l - 1) + r - 1]"></div>
+                                        <div class="txt">
+                                            <span ref="txt" :style="{fontSize:`${fontSize}px`}">{{ r.txt }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section class="list">
+            <h2>Ranking List</h2>
+            <div v-for="i,n in table" class="table">
+                <div class="delete" @click="del(n)"></div>
+                <table border="0" class="pad">
+                    <tr>
+                        <td width="25%">Name</td>
+                        <td width="25%">Error</td>
+                        <td width="25%">Score</td>
+                        <td width="25%">Time</td>
+                    </tr>
+                    <tr>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.errorList.length }}</td>
+                        <td>{{ i.integral }}</td>
+                        <td>{{ i.time }}s</td>
+                    </tr>
+                </table>
+                <div class="pad">
+                    <h3 v-if="!i.errorList.length">Full Mark</h3>
+                    <span @click="fontClick(event.target.innerText)" v-for="j in i.errorList">{{ j }}</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
