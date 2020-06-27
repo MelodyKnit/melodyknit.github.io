@@ -21,6 +21,10 @@ body {
 .white .more .ul {
   border: 1px solid #c5c7c9;
 }
+.white .search .li,
+.white .more .ul .li {
+  border-bottom: 1px solid #c5c7c9;
+}
 .white .search::after,
 .white .more .ul::after {
   border: 1vh solid #00000000;
@@ -50,6 +54,10 @@ body {
 .black .search,
 .black .more .ul {
   border: 1px solid #546470;
+}
+.black .search .li,
+.black .more .ul .li {
+  border-bottom: 1px solid #546470;
 }
 .black .search::after,
 .black .more .ul::after {
@@ -85,7 +93,6 @@ body {
 }
 .view .header .more .ul .li {
   padding: 10px 20px;
-  border-bottom: 1px solid #546470;
 }
 .view .header .more .ul .li span {
   float: right;
