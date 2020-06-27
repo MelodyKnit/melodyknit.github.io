@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    height: 100vh;
+    transition: 0.5s;
+    font-family: -apple-system, BlinkMacSystemFont, Microsoft YaHei UI, Microsoft YaHei, Roboto, Hiragino Sans GB, Source Han Sans CN, Fira Sans, Droid Sans, Helvetica Neue, arial, sans-serif;
+}
+
+.white {
+    background-color: white;
+}
+
+.white .icon {
+    box-shadow: 0 0 1px black;
+}
+
+.black {
+    color: #aaaaaa;
+    background-color: #15202b;
+}
+
+.black .txt {
+    color: white;
+}
+
+.black .icon {
+    box-shadow: 0 0 1px white;
+}
+
+.view .header {
+    padding: 2vh 3vh;
+    text-align: right;
+}
+
+.view .header .icon {
+    width: 4vh;
+    height: 4vh;
+    margin: 0 1vh;
+    cursor: pointer;
+    border-radius: 2vh;
+    display: inline-block;
+}
+
+.view .main {
+    margin: 0 auto;
+    padding-top: 8vh;
+    max-width: 750px;
+    text-align: center;
+}
+
+.view .main .title {
+    padding: 0 2vw;
+    font-size: 6vh;
+    color: #707070;
+    cursor: default;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.view .main .search {
+    width: 80%;
+    height: 5vh;
+    margin: 0 auto;
+    padding: 0 2vh;
+    min-height: 30px;
+    position: relative;
+    border-radius: 100vh;
+    border: 1px solid #dfe1e5;
+}
+
+.view .main .search .txt,
+.view .main .search .but {
+    height: 100%;
+}
+
+.view .main .search .txt {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 2vh;
+    background: none;
+    width: calc(100% - 5vh);
+}
+
+.view .main .search .txt::placeholder {
+    color: #999999;
+}
+
+.view .main .search .but {
+    width: 5vh;
+    height: 5vh;
+    float: right;
+    cursor: pointer;
+    min-height: 30px;
+    background: url(image/search.png) no-repeat;
+    background-size: 60%;
+    background-position: center right;
+}
+
+@media (max-width: 500px) {
+    .view .main .search {
+        border: none;
+        color: #5F6368;
+        margin: 1px auto;
+        padding: 1px 2vh;
+        background-color: #efefef;
+    }
+    .view .main .search .txt::placeholder {
+        color: #707070;
+    }
+}
+
+.view .main .search .error {
+    position: absolute;
+    font-size: 14px;
+    color: red;
+    bottom: -2.5vh;
+    left: 2vh;
+}
+
+.view .main .title,
+.view .main .search {
+    margin-bottom: 10vh;
+}
+
+@media (max-width: 500px) {
+    .view .main .search {
+        border: none;
+        color: #5F6368;
+        margin: 1px auto;
+        padding: 1px 2vh;
+        background-color: #efefef;
+    }
+    .view .main .search .txt::placeholder {
+        color: #707070;
+    }
+    .view .main .title,
+    .view .main .search {
+        margin-bottom: 5vh;
+    }
+}
+
+.view .main .webSites .webSite {
+    cursor: pointer;
+    padding: 2vh 3vh 3vh;
+    position: relative;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.view .main .webSites .webSite .list,
+.view .main .webSites .webSite .listTo {
+    bottom: 1vh;
+    width: 0%;
+    right: 50%;
+    height: 2px;
+    position: absolute;
+    border-radius: 5px;
+    transition: 0.25s all;
+    background: #f16a54;
+    transform: translateX(50%);
+}
+
+.view .main .webSites .webSite .listTo {
+    width: 50%;
+}
+
+.view .main .webSites .icons {
+    width: 5vh;
+    height: 5vh;
+    margin-bottom: 2vh;
+    border-radius: 5vh;
+    background-color: gray;
+}
+
+.view .main .webSites span {
+    left: 50%;
+    bottom: 2vh;
+    display: flex;
+    font-size: 14px;
+    position: absolute;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+}
