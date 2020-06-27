@@ -92,7 +92,7 @@ body {
     float: right;
     cursor: pointer;
     min-height: 30px;
-    background: url(image/search.png) no-repeat;
+    background: url(../image/search.png) no-repeat;
     background-size: 60%;
     background-position: center right;
 }
