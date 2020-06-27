@@ -154,18 +154,6 @@ body {
   background-size: 60%;
   background-position: center right;
 }
-@media (max-width: 500px) {
-  .view .main .search {
-    border: none;
-    color: #5F6368;
-    margin: 1px auto;
-    padding: 1px 2vh;
-    background-color: #efefef;
-  }
-  .view .main .search .txt::placeholder {
-    color: #707070;
-  }
-}
 .view .main .search .error {
   position: absolute;
   font-size: 14px;
@@ -191,6 +179,9 @@ body {
   .view .main .title,
   .view .main .search {
     margin-bottom: 5vh;
+  }
+  .view .main .txt {
+    color: black;
   }
 }
 .view .main .webSites .webSite {
