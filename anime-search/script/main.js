@@ -46,4 +46,5 @@ var vue = new Vue({
     }
 });
 vue.bgcolor();
-if (new Date().getHours() > 19) vue.bgcolor();
+let date = new Date().getHours()
+if (date > 18 || date < 7) vue.bgcolor();
