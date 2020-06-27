@@ -16,9 +16,19 @@
     <div class="view" id="view">
         <div class="header">
             <a href="http://wpa.qq.com/msgrd?v=3&uin=2711402357&site=qq&menu=yes">
-                <div class="icon" :style="bg(self.logo)"></div>
+                <div class="icon" :style="bg({url:self.logo})"></div>
             </a>
-            <div class="icon" @click="bgcolor" ref="bg"></div>
+            <div class="icon" @click="bgcolor" :style="bg({ url: `image/${color}.png`, color: colorTwo })"></div>
+            <div class="icon more" @click="more=!more" :style="bg({ url: `image/more_${color}.png`, color: colorTwo, size: '70%' })">
+                <div class="ul" v-show="more" @click.stop>
+                    <div class="li">
+                        <a href="http://www.nayofehume.com/baqo@tmf8u6ya/bitcomet_setup.exe">磁力下载软件<span>（PC）</span></a>
+                    </div>
+                    <div class="li">
+                        <a href="https://download.ydjapp.com/antss/ant_1.3.4.zip">加速器<span>（VPN）</span></a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="main">
             <div class="title" title="Anime Search">Anime Search</div>
@@ -30,7 +40,7 @@
             <div class="webSites">
                 <div v-for="i, j in webSite" class="webSite" @click="sw(event, i)">
                     <div class="list"></div>
-                    <div class="icons" :style="bg(i.logo)"></div>
+                    <div class="icons" :style="bg({url:i.logo})"></div>
                     <span>{{ i.webSite }}</span>
                 </div>
             </div>
