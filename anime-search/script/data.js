@@ -1,9 +1,4 @@
 const webSite = [{
-    webSite: '末日动漫',
-    search: '/search.php?keyword=',
-    url: 'https://share.acgnx.se',
-    logo: 'https://share.acgnx.se/images/favicon.ico'
-}, {
     webSite: '动漫花园',
     search: '/search/',
     url: 'https://www.dongmanhuayuan.com',
