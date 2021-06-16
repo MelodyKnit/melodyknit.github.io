@@ -1,16 +1,19 @@
 var data = `
-stomachache
-toothache
-fever
-咳嗽
-头痛
-流鼻涕
-sore throat
-symptom
-temperature
-pill
-嗓子痛
-胃痛
+frog
+盘扣
+mandarin collar
+立领
+openings
+衩
+sleeve
+袖子
+long sleeves
+short sleeves
+sleeveless
+round Jin
+double Jin
+high collar
+low collar
 `;
 
 /**
